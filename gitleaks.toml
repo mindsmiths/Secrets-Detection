@@ -2771,4 +2771,4 @@ id = "test-custom-key"
 regex = '''test[0-9]{3}'''
 keywords = [
     "test",
-]=
+]
