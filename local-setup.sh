@@ -3,6 +3,7 @@
 # Create git template directory
 mkdir -p ~/.git-templates/hooks
 
+
 # Set template directory for git
 git config --global init.templatedir '~/.git-templates'
 
@@ -10,4 +11,4 @@ git config --global init.templatedir '~/.git-templates'
 cp pre-commit ~/.git-templates/hooks
 
 # Add custom gitleaks config with secret regexes locally.
-cp gitleaks.toml ~/.mindsmiths-gitleaks
+cp gitleaks.toml ~/.mindsmiths-gitleaks.toml
