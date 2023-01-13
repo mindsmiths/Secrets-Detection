@@ -1,9 +1,12 @@
 # Secrets-Detection
 
+## What is gitleaks
+Gitleaks is a tool used to detect secrets before they are pushed to git. 
+When run locally it will block any commit that contains a secret
 
 ## Setup secrets detection locally
 
-### 1. Install Git Leaks locally
+### 1. Install Gitleaks locally
 To install gitleaks you will need to clone git-leaks repo locally.  You will not need it later so we will clone in it /tmp directory.
 1. Clone gitleaks repo
 ```bash
