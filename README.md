@@ -13,7 +13,7 @@ To install gitleaks you will need to clone git-leaks repo locally.  You will not
 ```bash
 go version
 ```
-Version should be `1.19` or more.  
+Version should be `1.19` or more. If you have version less than `1.19` either install newer version or change contents of second line in  `go.mod` file from `go 1.19` to `go 1.18`
 **If you don't have go installed locally install it with:** `sudo snap install go --classic`
 
 
@@ -46,8 +46,8 @@ We will create template for custom precommit hook that runs before every local c
 ```bash
 cd /tmp
 git clone https://github.com/mindsmiths/Secrets-Detection.git
-git checkout fix/git-leaks-config-location
 cd Secrets-Detection
+git checkout fix/git-leaks-config-location # ovo je temp linija, mičemo ju kad mergamo u main
 ```
 2. Run script that will create .git-templates directory and add secrets detection config file to your home directory
 ```bash
