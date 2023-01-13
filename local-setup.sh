@@ -1,17 +1,14 @@
 #!/bin/bash
 
-## Install gitleaks
-
-cd /tmp
-git clone https://github.com/zricethezav/gitleaks.git
-cd gitleaks
-make build
-cp gitleaks /usr/bin
-
-git config --global init.templatedir '~/.git-templates'
-
+# Create git template directory
 mkdir -p ~/.git-templates/hooks
 
+
+# Set template directory for git
+git config --global init.templatedir '~/.git-templates'
+
+# Add pre-commit template
 cp pre-commit ~/.git-templates/hooks
 
-cp gitleaks.toml ~/.git-templates
+# Add custom gitleaks config with secret regexes locally.
+cp gitleaks.toml ~/.mindsmiths-gitleaks.toml
