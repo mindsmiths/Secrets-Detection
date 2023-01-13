@@ -4,6 +4,7 @@
 Gitleaks is a tool used to detect secrets before they are pushed to git. 
 When run locally it will block any commit that contains a secret
 
+
 ## Setup secrets detection locally
 
 ### 1. Install Gitleaks locally
@@ -29,6 +30,7 @@ sudo cp gitleaks /usr/bin
 ```bash
 gitleaks help
 ```
+
 ### 2. Create git hook template
 Git hook template is used on every `git clone` or `git init` to add custom hooks to your local git repository. (Hooks are used to automatically run scripts on certain git events like commit, push...) 
 We will create template for custom precommit hook that runs before every local commit and searches for secrets in it.
@@ -55,3 +57,16 @@ git commit -m "commit koji ima sifru"
 ```
 You should see that gitleaks was run and that it detected a secret. 
 If you get any error during this process something went wrong. :(
+
+## Usage
+After everything is installed and setup correctly for current git repo gitleaks will automatically scan your every commit and make sure there are not secrets in it. 
+If it detects any secrets it will cancel your commit and tell you where detected secret is located.
+
+## Can I skip secret detection for a commit?
+Generally you should never skip gitleaks check for any commit. 
+If you are commiting anything for public github repo you are **NOT ALLOWED** to skip gitleaks check. 
+
+For any pushes to Mindsmiths Gitlab you sould first consider if that secret should be in the code. But if it must be pushed you can skip secret detection for current commit like this:
+```bash
+SKIP=gitleaks git commit -m "your commit message"
+```
