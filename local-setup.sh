@@ -10,4 +10,4 @@ git config --global init.templatedir '~/.git-templates'
 cp pre-commit ~/.git-templates/hooks
 
 # Add custom gitleaks config with secret regexes locally.
-cp gitleaks.toml ~/.mindsmiths-git-leaks
+cp gitleaks.toml ~/.mindsmiths-gitleaks
