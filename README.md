@@ -47,7 +47,6 @@ We will create template for custom precommit hook that runs before every local c
 cd /tmp
 git clone https://github.com/mindsmiths/Secrets-Detection.git
 cd Secrets-Detection
-git checkout fix/git-leaks-config-location # ovo je temp linija, mičemo ju kad mergamo u main
 ```
 2. Run script that will create .git-templates directory and add secrets detection config file to your home directory
 ```bash
