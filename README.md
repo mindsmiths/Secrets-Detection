@@ -9,6 +9,15 @@ When run locally it will block any commit that contains a secret
 
 ### 1. Install Gitleaks locally
 To install gitleaks you will need to clone git-leaks repo locally.  You will not need it later so we will clone in it /tmp directory.
+1. Make sure you have go installed at the right version.
+```bash
+go version
+```
+Version should be `1.19` or more.  
+**If you don't have go installed locally install it with:** `sudo snap install go --classic`
+
+
+
 1. Clone gitleaks repo
 ```bash
 cd /tmp
@@ -19,8 +28,6 @@ cd gitleaks
 ```bash
 make build
 ```
-Potential error could be that that in file `go.mod` second line should be `go 1.18` insted of `go 1.19`.
-If you get an error that isn't resolved with this call infra :)
 3. Make gitleaks executable
 ```bash
 sudo cp gitleaks /usr/bin
@@ -39,6 +46,7 @@ We will create template for custom precommit hook that runs before every local c
 ```bash
 cd /tmp
 git clone https://github.com/mindsmiths/Secrets-Detection.git
+git checkout fix/git-leaks-config-location
 cd Secrets-Detection
 ```
 2. Run script that will create .git-templates directory and add secrets detection config file to your home directory
